@@ -5,7 +5,7 @@
 #include "Setting.h"
 
 namespace jm {
-	class entity
+	class enemy
 	{
 	protected:
 		int hp;
@@ -15,8 +15,8 @@ namespace jm {
 		vec2 center = vec2(0.0f, 0.0f);
 
 	public:
-		entity() {}
-		entity(int hp, int damage, vec2 velocity, int score) :hp(hp), damage(damage), velocity(velocity), score(score) {}
+		enemy() {}
+		enemy(int hp, int damage, vec2 velocity, int score) :hp(hp), damage(damage), velocity(velocity), score(score) {}
 		virtual void update(const float& dt, vec2 direction) {}
 		virtual void draw() {}
 

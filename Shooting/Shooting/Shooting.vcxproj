@@ -133,14 +133,14 @@
   <ItemGroup>
     <ClInclude Include="Colors.h" />
     <ClInclude Include="DrawFunctions.h" />
-    <ClInclude Include="entity.h" />
+    <ClInclude Include="enemy.h" />
     <ClInclude Include="Game2D.h" />
     <ClInclude Include="MyBullet.h" />
     <ClInclude Include="MySpaceShip.h" />
     <ClInclude Include="RGB.h" />
     <ClInclude Include="Setting.h" />
     <ClInclude Include="SmallUFO.h" />
-    <ClInclude Include="SpaceShip.h" />
+    <ClInclude Include="MainCombined.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Vector3.h" />

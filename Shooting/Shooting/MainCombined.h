@@ -9,7 +9,7 @@
 
 namespace jm
 {
-	class SpaceShip : public Game2D
+	class MainCombined : public Game2D
 	{
 	public:
 		MySpaceShip spaceship;
@@ -21,9 +21,9 @@ namespace jm
 		float timer; // 총알 타이머
 
 	public:
-		SpaceShip() :timer(0),spaceship(50.f){}
+		MainCombined():timer(0),spaceship(50.f){}
 
-		~SpaceShip()
+		~MainCombined()
 		{
 			if (bullet1 != nullptr) {
 				delete bullet1;
@@ -33,7 +33,6 @@ namespace jm
 
 		void update() override
 		{
-
 
 			// 우주선움직임
 			if (isKeyPressed(GLFW_KEY_A))  spaceship.center.x -= 0.15f * getTimeStep();
@@ -48,7 +47,7 @@ namespace jm
 				//총알타이머
 				timer += getTimeStep();
 				//총알타이머 딜레이 도달시
-				if (timer >= spaceship.delay * getTimeStep()) {
+				if (timer >= spaceship.getDelay() * getTimeStep()) {
 					//첫번쨰 무기에서 나가는 총알 생성
 					bullet1 = new MyBullet;
 					bullet1->center = spaceship.center;

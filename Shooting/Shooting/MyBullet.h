@@ -9,13 +9,14 @@ namespace jm {
 		float radius;
 		float angle;
 		float damage;
+		float delay;
 	public:
 		vec2 center = vec2(0.0f, 0.0f);
 		vec2 direction = vec2(0.0f, 0.0f);
 		vec2 velocity = vec2(0.0f, 0.0f);
 
-		MyBullet() :radius(0.2f), damage(50) {}
-		MyBullet(float radius, float damage) : radius(radius) {};
+		MyBullet() :radius(0.2f), damage(0), delay(50.f){}
+		MyBullet(float radius, float damage) : radius(radius), damage(damage) {};
 
 		void draw()
 		{

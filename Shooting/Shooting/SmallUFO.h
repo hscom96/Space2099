@@ -1,12 +1,12 @@
 #pragma once
-#include "entity.h"
+#include "enemy.h"
 #include "Game2D.h"
 
 namespace jm {
-	class SmallUFO : public entity
+	class SmallUFO : public enemy
 	{
 	public:
-		SmallUFO() : entity(200, 50, vec2(0.04f,0.04f), 50) {
+		SmallUFO() : enemy(200, 50, vec2(0.04f,0.04f), 50) {
 			int flag1 = rand() % 2;
 			int flag2 = rand() % 2;
 			if (flag1 == 1) {

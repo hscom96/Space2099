@@ -1,5 +1,5 @@
 #include "Game2D.h"
-#include "SpaceShip.h"
+#include "MainCombined.h"
 
 namespace jm
 {
@@ -27,6 +27,6 @@ namespace jm
 
 int main(void)
 {
-	jm::SpaceShip().init("Space 2099", 1024, 768, false).run();
+	jm::MainCombined().init("Space 2099", 1024, 768, false).run();
 	return 0;
 }
