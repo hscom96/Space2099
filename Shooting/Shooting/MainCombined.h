@@ -35,10 +35,10 @@ namespace jm
 		{
 
 			// 快林急框流烙
-			if (isKeyPressed(GLFW_KEY_A))  spaceship.center.x -= 0.15f * getTimeStep();
-			if (isKeyPressed(GLFW_KEY_D))	spaceship.center.x += 0.15f * getTimeStep();
-			if (isKeyPressed(GLFW_KEY_W))	spaceship.center.y += 0.15f * getTimeStep();
-			if (isKeyPressed(GLFW_KEY_S))	spaceship.center.y -= 0.15f * getTimeStep();
+			if (isKeyPressed(GLFW_KEY_A)) spaceship.update(GLFW_KEY_A, getTimeStep());
+			if (isKeyPressed(GLFW_KEY_D)) spaceship.update(GLFW_KEY_D, getTimeStep());
+			if (isKeyPressed(GLFW_KEY_W)) spaceship.update(GLFW_KEY_W, getTimeStep());
+			if (isKeyPressed(GLFW_KEY_S)) spaceship.update(GLFW_KEY_S, getTimeStep());
 			spaceship.direction = getCursorPos();
 
 			// 醚舅积己
