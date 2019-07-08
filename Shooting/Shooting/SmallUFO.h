@@ -6,7 +6,7 @@ namespace jm {
 	class SmallUFO : public entity
 	{
 	public:
-		SmallUFO() : entity(200, 50, vec2(), 50) {
+		SmallUFO() : entity(200, 50, vec2(0.04f,0.04f), 50) {
 			int flag1 = rand() % 2;
 			int flag2 = rand() % 2;
 			if (flag1 == 1) {
@@ -43,9 +43,17 @@ namespace jm {
 		}
 
 		void update(const float& dt, vec2 direction) {
-			float angle = GetDirectionAngle(center, direction);
-			center.x += cos(angle * PI / 180) * velocity.x * dt;
-			center.y += sin(angle * PI / 180) * velocity.y * dt;
+				if (GetDirectionLength(center, direction) < 1.6f) {
+					float angle = GetDirectionAngle(center, direction);
+					center.x += cos(angle * PI / 180) * velocity.x * dt;
+					center.y += sin(angle * PI / 180) * velocity.y * dt;
+				}
+				else {
+					center.x += ((rand() / (float)RAND_MAX) * framesize_X - framesize_X / 2) * velocity.x * dt;
+					center.y += ((rand() / (float)RAND_MAX) * framesize_Y - framesize_Y / 2) * velocity.y * dt;
+
+				}
+			
 		}
 	};
 }
