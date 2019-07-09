@@ -12,7 +12,7 @@ namespace jm {
 		std::vector<Weapon*>::iterator it; //총알 컨테이너 반복자
 
 	public:
-		WeaponManager() : delay(50.0f) {}
+		WeaponManager() : delay(75.0f) {}
 
 		int getDelay() {
 			return delay;

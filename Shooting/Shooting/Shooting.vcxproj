@@ -135,6 +135,7 @@
     <ClInclude Include="Colors.h" />
     <ClInclude Include="DrawFunctions.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyManager.h" />
     <ClInclude Include="Game2D.h" />
     <ClInclude Include="MyBullet.h" />
     <ClInclude Include="MySpaceShip.h" />

@@ -8,22 +8,23 @@
 #include "MyBullet.h"
 #include "Weapon.h"
 #include "WeaponManager.h"
-
+#include "EnemyManager.h"
 namespace jm
 {
 	class MainCombined : public Game2D
 	{
 	public:
 		MySpaceShip spaceship;
-		SmallUFO smallufo[10];
-
+		EnemyManager enemymanager;
 		MyBullet* bullet1 = nullptr;
 		MyBullet* bullet2 = nullptr;
 		WeaponManager weaponmanager; // 총알 관리자
 		float timer; // 총알 타이머
 
 	public:
-		MainCombined():timer(0){}
+		MainCombined():timer(0){
+			enemymanager.createSmallUFO(10);
+		}
 
 		~MainCombined()
 		{
@@ -62,16 +63,9 @@ namespace jm
 
 			srand(static_cast<size_t>(time(NULL)));
 			//작은 UFO 이동
-			for (int i = 0; i < 10; i++) {
-				smallufo[i].update(getTimeStep(),spaceship.center);
-			}
+			enemymanager.update(getTimeStep(), spaceship.center);
 			//작은 UFO rendering
-			beginTransformation();
-			{
-				for (int i = 0; i < 10; i++) {
-					smallufo[i].draw();
-				}
-			}
+			enemymanager.draw();
 
 			// 마우스 조준점 rendering	
 			beginTransformation();
