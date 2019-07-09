@@ -8,13 +8,13 @@ namespace jm {
 	{
 	public:
 
-		MyBullet() : Weapon(0.2f, 50) {}
+		MyBullet() : Weapon(0.02f, 50) {}
 		virtual void draw()
 		{
 			beginTransformation();
 			translate(center);
-			drawFilledRegularConvexPolygon(Colors::yellow, 0.02f, 8);
-			drawWiredRegularConvexPolygon(Colors::gray, 0.02f, 8);
+			drawFilledRegularConvexPolygon(Colors::yellow, radius, 8);
+			drawWiredRegularConvexPolygon(Colors::gray, radius, 8);
 			endTransformation();
 		}
 		virtual void update(const float& dt)

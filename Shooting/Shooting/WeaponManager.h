@@ -24,22 +24,25 @@ namespace jm {
 			}
 		}
 
+		std::vector<Weapon*>& getContainer() {
+			return bullet_Container;
+		}
+
 		void createBullet(const MySpaceShip& spaceship, vec2 direction, float velocity) {
 			bullet = new MyBullet;
-			bullet->center = spaceship.center;
-			bullet->center.y += 0.08f;
-			bullet->velocity = vec2(velocity, velocity);
-			bullet->direction = direction;
-			bullet->setAngle(GetDirectionAngle(bullet->center, bullet->direction));
+			bullet->setCenter(spaceship.center);
+			bullet->setVelocity(vec2(velocity, velocity));
+			bullet->setDirection(direction);
+			bullet->setAngle(GetDirectionAngle(bullet->getCenter(), bullet->getDirection()));
 			bullet_Container.push_back(bullet);
 		}
 
 
-		//불필요한총알 삭제
+		//맵범위 벗어난 총알 삭제
 		void deleteBullet() {
 			for (it = bullet_Container.begin(); it != bullet_Container.end();) {
 				Weapon* temp = *it;   // 임시변수
-				if (abs(temp->center.x) > framesize_X || abs(temp->center.y) > framesize_Y)
+				if (abs(temp->getCenter().x) > framesize_X || abs(temp->getCenter().y) > framesize_Y)
 				{
 					if (temp != nullptr)  // nullptr검사후 메모리해제하기.
 						delete temp;

@@ -126,6 +126,7 @@
     <ClCompile Include="DrawFunctions.cpp" />
     <ClCompile Include="Game2D.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainCombined.cpp" />
     <ClCompile Include="MyBullet.cpp" />
     <ClCompile Include="MySpaceShip.cpp" />
     <ClCompile Include="Timer.cpp" />

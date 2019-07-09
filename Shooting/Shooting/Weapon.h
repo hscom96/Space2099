@@ -6,12 +6,12 @@ namespace jm {
 		float radius;
 		float angle;
 		int damage;
-
-	public:
-		Weapon(float radius, int damage) :radius(radius), damage(damage) {}
 		vec2 center;
 		vec2 direction;
 		vec2 velocity;
+		
+	public:
+		Weapon(float radius, int damage) :radius(radius), damage(damage) {}
 
 		virtual void draw() {};
 		virtual void update(const float& dt) {};
@@ -22,6 +22,22 @@ namespace jm {
 			}
 		}
 
+		vec2 getCenter() {
+			return center;
+		}
+		void setCenter(vec2 center){
+			this->center = center;
+		}
+
+		void setVelocity(vec2 velocity) {
+			this->velocity = velocity;
+		}
+		vec2 getDirection() {
+			return direction;
+		}
+		void setDirection(vec2 direction) {
+			this->direction = direction;
+		}
 		float getRadius() {
 			return radius;
 		}

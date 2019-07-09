@@ -9,6 +9,7 @@
 #include "Weapon.h"
 #include "WeaponManager.h"
 #include "EnemyManager.h"
+#include "CollisionDetect.h"
 namespace jm
 {
 	class MainCombined : public Game2D
@@ -23,7 +24,7 @@ namespace jm
 
 	public:
 		MainCombined():timer(0){
-			enemymanager.createSmallUFO(10);
+			enemymanager.createSmallUFO(1);
 		}
 
 		~MainCombined()
@@ -56,16 +57,15 @@ namespace jm
 					timer = 0; // 타이머 초기화
 				}
 			}
-			//총알이동
-			weaponmanager.update(getTimeStep());
-			//총알 rendering
-			weaponmanager.draw();
-
+			weaponmanager.update(getTimeStep()); //총알이동
+			weaponmanager.draw(); //총알 rendering
+			
 			srand(static_cast<size_t>(time(NULL)));
-			//작은 UFO 이동
-			enemymanager.update(getTimeStep(), spaceship.center);
-			//작은 UFO rendering
-			enemymanager.draw();
+			
+			enemymanager.update(getTimeStep(), spaceship.center); //적유닛 이동
+			enemymanager.draw(); //적유닛 rendering
+
+			CollisionDetect::detectCollision_bullet_enemy(enemymanager, weaponmanager);
 
 			// 마우스 조준점 rendering	
 			beginTransformation();

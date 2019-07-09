@@ -12,7 +12,7 @@ namespace jm {
 			beginTransformation();
 			{
 				translate(center.x, center.y);
-				drawFilledCircle(Colors::gray, 0.06f);
+				drawFilledCircle(Colors::gray, radius);
 				drawFilledBox(Colors::darkgreen, 0.17, 0.03);
 			}
 			endTransformation();

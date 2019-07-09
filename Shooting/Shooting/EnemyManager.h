@@ -30,5 +30,9 @@ namespace jm {
 			}
 		}
 
+		std::vector<Enemy*>& getContainer() {
+			return Enemy_Container;
+		}
+
 	};
 }
