@@ -1,12 +1,12 @@
 #pragma once
-#include "enemy.h"
+#include "Enemy.h"
 #include "Game2D.h"
 
 namespace jm {
-	class SmallUFO : public enemy
+	class SmallUFO : public Enemy
 	{
 	public:
-		SmallUFO() : enemy(200, 50, vec2(0.04f, 0.04f), 50) {
+		SmallUFO() : Enemy(200, 1, vec2(0.04f, 0.04f), 50, 0.06f) {
 			int flag1 = rand() % 2;
 			int flag2 = rand() % 2;
 			float position_Y;
@@ -37,9 +37,6 @@ namespace jm {
 				}
 			}
 		}
-	
-
-
 
 		void draw() {
 			beginTransformation();
@@ -54,13 +51,12 @@ namespace jm {
 		void update(const float& dt, vec2 direction) {
 				if (GetDirectionLength(center, direction) < 1.6f) {
 					float angle = GetDirectionAngle(center, direction);
-					center.x += cos(angle * PI / 180) * velocity.x * dt;
-					center.y += sin(angle * PI / 180) * velocity.y * dt;
+					center.x += cos(getRadian(angle)) * velocity.x * dt;
+					center.y += sin(getRadian(angle)) * velocity.y * dt;
 				}
 				else {
 					center.x += ((rand() / (float)RAND_MAX) * framesize_X - framesize_X / 2) * velocity.x * dt;
 					center.y += ((rand() / (float)RAND_MAX) * framesize_Y - framesize_Y / 2) * velocity.y * dt;
-
 				}
 			
 		}

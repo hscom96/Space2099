@@ -131,9 +131,10 @@
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CollisionDetect.h" />
     <ClInclude Include="Colors.h" />
     <ClInclude Include="DrawFunctions.h" />
-    <ClInclude Include="enemy.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game2D.h" />
     <ClInclude Include="MyBullet.h" />
     <ClInclude Include="MySpaceShip.h" />
@@ -141,9 +142,12 @@
     <ClInclude Include="Setting.h" />
     <ClInclude Include="SmallUFO.h" />
     <ClInclude Include="MainCombined.h" />
+    <ClInclude Include="ScoreBoard.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Vector3.h" />
+    <ClInclude Include="Weapon.h" />
+    <ClInclude Include="WeaponManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

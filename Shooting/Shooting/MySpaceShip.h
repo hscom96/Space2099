@@ -5,17 +5,11 @@
 namespace jm {
 	class MySpaceShip
 	{
-	private:
-		float delay;
 	public:
 		vec2 center = vec2(0.0f, 0.0f);
-		vec2 direction = vec2(1.0f, 0.0f); //È¸Àü
-		MySpaceShip(float delay) :delay(delay) {}
+		vec2 direction = vec2(1.0f, 0.0f); 
 		void draw();
 		void update();
-		float getDelay() {
-			return delay;
-		}
 		void update(char key, const float& dt) {
 			switch (key) {
 			case GLFW_KEY_A:

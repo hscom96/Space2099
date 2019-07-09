@@ -5,20 +5,29 @@
 #include "Setting.h"
 
 namespace jm {
-	class enemy
+	class Enemy
 	{
 	protected:
 		int hp;
 		int damage;
 		int score;
+		float radius;
+
 		vec2 velocity;
 		vec2 center = vec2(0.0f, 0.0f);
 
 	public:
-		enemy() {}
-		enemy(int hp, int damage, vec2 velocity, int score) :hp(hp), damage(damage), velocity(velocity), score(score) {}
+		Enemy() {}
+		Enemy(int hp, int damage, vec2 velocity, int score, float radius) :hp(hp), damage(damage), velocity(velocity), score(score), radius(radius) {}
 		virtual void update(const float& dt, vec2 direction) {}
 		virtual void draw() {}
+
+		int getScore() {
+			return score;
+		}
+		float getRadius() {
+			return radius;
+		}
 
 		int getHp() {
 			return hp;

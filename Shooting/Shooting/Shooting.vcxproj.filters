@@ -68,10 +68,22 @@
     <ClInclude Include="MyBullet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="enemy.h">
+    <ClInclude Include="MainCombined.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MainCombined.h">
+    <ClInclude Include="Weapon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreBoard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionDetect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -269,6 +269,7 @@ namespace jm
 	float Game2D::getTimeStep()
 	{
 		return spf;
+	
 	}
 
 	void Game2D::drawGrid()
