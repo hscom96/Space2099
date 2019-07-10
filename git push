@@ -1,0 +1,80 @@
+[33mcommit 3fa19cb7a0a6cff4ab06c25f758c288a121f77f1[m[33m ([m[1;36mHEAD -> [m[1;32m적유닛구현TEST[m[33m)[m
+Author: hscom96 <hscom96@gmail.com>
+Date:   Thu Jul 11 00:02:23 2019 +0900
+
+    적유닛 체력 구현
+
+[33mcommit c7cc24ef098151b65ee821d4d9a039cccdfd7704[m
+Author: hscom96 <hscom96@gmail.com>
+Date:   Wed Jul 10 23:39:25 2019 +0900
+
+    CollisionDetect.h
+    1. 적유닛-총알 충돌 구현 (detectCollision_bullet_enemy)
+
+[33mcommit 397b5d82599617b4c749a5a97b000e957d11a5cc[m
+Author: hscom96 <hscom96@gmail.com>
+Date:   Wed Jul 10 02:47:42 2019 +0900
+
+    CollisionDetect.h 구현중
+    1. 충돌감지하고 총알 사라지는것 구현
+    (-> 유닛도 사라지게 구현)
+
+[33mcommit f856bdcf73f56647e4ae80f24d420e09ef8d2423[m
+Author: hscom96 <hscom96@gmail.com>
+Date:   Tue Jul 9 22:51:44 2019 +0900
+
+    EnemyManager.h 구현
+    (적유닛 관리)
+
+[33mcommit 9e45d952b6cd010e66e4712f01a7038d918b8249[m[33m ([m[1;31morigin/적유닛구현TEST[m[33m)[m
+Author: hscom96 <hscom96@gmail.com>
+Date:   Tue Jul 9 19:37:02 2019 +0900
+
+    WeaponManage.h 추가
+    (총알 관리)
+
+[33mcommit d0b8e7459364d835de37a4df9b96ad380e4788f5[m
+Author: hscom96 <hscom96@gmail.com>
+Date:   Mon Jul 8 23:48:19 2019 +0900
+
+    Maincombined.h, MySpaceShip.h
+    우주선 움직임 update함수 수정
+
+[33mcommit 6e836c972b6afa2943c9d6ea1c03b32b39f16a92[m
+Author: hscom96 <hscom96@gmail.com>
+Date:   Mon Jul 8 22:54:22 2019 +0900
+
+    SmallUFO.h
+    switch-case 구문으로변경
+
+[33mcommit 3eb831848e33ccdd103e5a66cbb24de7cd3fa036[m
+Author: hscom96 <hscom96@gmail.com>
+Date:   Mon Jul 8 22:40:57 2019 +0900
+
+    파일이름변경
+    1. entity -> enemy
+    2. spaceship -> maincombined
+
+[33mcommit 0bc49a80ac5b8c790d9be40f89e96fa80430dbda[m
+Author: hscom96 <hscom96@gmail.com>
+Date:   Mon Jul 8 15:50:29 2019 +0900
+
+    파일 분할(MyBullet , MySpaceShip)
+
+[33mcommit f37c3eda298495452729effbc637a3f4b8ac20ee[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: hyeonsu96 <hscom96@gmail.com>
+Date:   Mon Jul 8 02:18:46 2019 +0900
+
+    1. 사용자 유닛 구현
+    - 유닛 이동 (방향키 wasd)
+    - 유닛 회전 (마우스 포인터)
+    - 총알 연사 발사 (마우스 포인터 방향)
+    2.적유닛 일부구현
+    - 작은ufo의 외형
+    - 랜덤으로 벽에서 생성
+
+[33mcommit 96b10f980e16f130e47ce9bcb02f2ea923c1df68[m
+Author: hscom96 <46397442+hscom96@users.noreply.github.com>
+Date:   Mon Jul 8 02:04:40 2019 +0900
+
+    Initial commit

@@ -1,0 +1,2 @@
+*.exe filter=lfs diff=lfs merge=lfs -text
+*.exeTracking filter=lfs diff=lfs merge=lfs -text
