@@ -8,7 +8,7 @@ namespace jm {
 	{
 	public:
 
-		MyBullet() : Weapon(0.02f, 50) {}
+		MyBullet() : Weapon(0.02f) {}
 		virtual void draw()
 		{
 			beginTransformation();

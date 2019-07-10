@@ -21,10 +21,11 @@ namespace jm
 		MyBullet* bullet2 = nullptr;
 		WeaponManager weaponmanager; // 총알 관리자
 		float timer; // 총알 타이머
+		CollisionDetect collisionDetect;
 
 	public:
-		MainCombined():timer(0){
-			enemymanager.createSmallUFO(1);
+		MainCombined() :timer(0) {
+			enemymanager.createSmallUFO(5);
 		}
 
 		~MainCombined()
@@ -37,7 +38,7 @@ namespace jm
 
 		void update() override
 		{
-			
+
 			// 우주선움직임
 			if (isKeyPressed(GLFW_KEY_A)) spaceship.update(GLFW_KEY_A, getTimeStep());
 			if (isKeyPressed(GLFW_KEY_D)) spaceship.update(GLFW_KEY_D, getTimeStep());
@@ -59,13 +60,13 @@ namespace jm
 			}
 			weaponmanager.update(getTimeStep()); //총알이동
 			weaponmanager.draw(); //총알 rendering
-			
+
 			srand(static_cast<size_t>(time(NULL)));
-			
+
 			enemymanager.update(getTimeStep(), spaceship.center); //적유닛 이동
 			enemymanager.draw(); //적유닛 rendering
 
-			CollisionDetect::detectCollision_bullet_enemy(enemymanager, weaponmanager);
+			collisionDetect.detectCollision_bullet_enemy(enemymanager, weaponmanager);
 
 			// 마우스 조준점 rendering	
 			beginTransformation();
@@ -88,7 +89,6 @@ namespace jm
 			}
 			endTransformation();
 
-			endTransformation();
 
 			// 불필요한 총알 삭제
 			weaponmanager.deleteBullet();

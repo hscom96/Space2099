@@ -9,9 +9,9 @@ namespace jm {
 		vec2 center;
 		vec2 direction;
 		vec2 velocity;
-		
+
 	public:
-		Weapon(float radius, int damage) :radius(radius), damage(damage) {}
+		Weapon(float radius) :radius(radius), damage(50) {}
 
 		virtual void draw() {};
 		virtual void update(const float& dt) {};
@@ -25,7 +25,7 @@ namespace jm {
 		vec2 getCenter() {
 			return center;
 		}
-		void setCenter(vec2 center){
+		void setCenter(vec2 center) {
 			this->center = center;
 		}
 
