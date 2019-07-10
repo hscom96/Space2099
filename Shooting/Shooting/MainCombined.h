@@ -26,6 +26,7 @@ namespace jm
 	public:
 		MainCombined() :timer(0) {
 			enemymanager.createSmallUFO(5);
+			enemymanager.createBoss(1);
 		}
 
 		~MainCombined()

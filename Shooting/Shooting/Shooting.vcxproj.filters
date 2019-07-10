@@ -92,5 +92,8 @@
     <ClInclude Include="EnemyManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

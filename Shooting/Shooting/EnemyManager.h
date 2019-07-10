@@ -2,6 +2,7 @@
 #include "Enemy.h"
 #include "SmallUFO.h"
 #include "MySpaceShip.h"
+#include "Boss.h"
 namespace jm {
 	class EnemyManager {
 	private:
@@ -13,6 +14,14 @@ namespace jm {
 		void createSmallUFO(int num) {
 			for (int i = 0; i < num; i++) {
 				enemy = new SmallUFO();
+				Enemy_Container.push_back(enemy);
+			}
+		}
+
+		//num개의 Boss 생성
+		void createBoss(int num) {
+			for (int i = 0; i < num; i++) {
+				enemy = new Boss();
 				Enemy_Container.push_back(enemy);
 			}
 		}
