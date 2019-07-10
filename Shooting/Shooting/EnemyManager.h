@@ -3,6 +3,8 @@
 #include "SmallUFO.h"
 #include "MySpaceShip.h"
 #include "Boss.h"
+#include "BigUFO.h"
+
 namespace jm {
 	class EnemyManager {
 	private:
@@ -18,6 +20,14 @@ namespace jm {
 			}
 		}
 
+		//num개의 BigUFO 생성
+		void createBigUFO(int num) {
+			for (int i = 0; i < num; i++) {
+				enemy = new BigUFO();
+				Enemy_Container.push_back(enemy);
+			}
+		}
+
 		//num개의 Boss 생성
 		void createBoss(int num) {
 			for (int i = 0; i < num; i++) {
@@ -25,6 +35,7 @@ namespace jm {
 				Enemy_Container.push_back(enemy);
 			}
 		}
+
 
 		//컨테이너 안의 Enemy 이동
 		void update(const float& dt, vec2 direction) {

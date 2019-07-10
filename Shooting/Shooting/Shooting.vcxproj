@@ -132,6 +132,7 @@
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BigUFO.h" />
     <ClInclude Include="Boss.h" />
     <ClInclude Include="CollisionDetect.h" />
     <ClInclude Include="Colors.h" />

@@ -95,5 +95,8 @@
     <ClInclude Include="Boss.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BigUFO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
