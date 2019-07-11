@@ -2,7 +2,7 @@
 #include "Game2D.h"
 #include "MyBullet.h"
 #include "Weapon.h"
-
+#define deleteBulletSize 14
 namespace jm {
 	class WeaponManager {
 	private:
@@ -40,19 +40,21 @@ namespace jm {
 
 		//맵범위 벗어난 총알 삭제
 		void deleteBullet() {
-			for (it = bullet_Container.begin(); it != bullet_Container.end();) {
-				Weapon* temp = *it;   // 임시변수
-				if (abs(temp->getCenter().x) > framesize_X || abs(temp->getCenter().y) > framesize_Y)
-				{
-					if (temp != nullptr)  // nullptr검사후 메모리해제하기.
-						delete temp;
-					temp = nullptr;
-					it = bullet_Container.erase(it);
-					if (bullet_Container.size() == 0)  // 컨테이너사이즈가 0이면 더 돌필요없이 종료
-						break;
-				}
-				else {
-					it++;
+			if(bullet_Container.size() > deleteBulletSize){
+				for (it = bullet_Container.begin(); it != bullet_Container.end();) {
+					Weapon* temp = *it;   // 임시변수
+					if (abs(temp->getCenter().x) > framesize_X || abs(temp->getCenter().y) > framesize_Y)
+					{
+						if (temp != nullptr)  // nullptr검사후 메모리해제하기.
+							delete temp;
+						temp = nullptr;
+						it = bullet_Container.erase(it);
+						if (bullet_Container.size() == 0)  // 컨테이너사이즈가 0이면 더 돌필요없이 종료
+							break;
+					}
+					else {
+						it++;
+					}
 				}
 			}
 			}

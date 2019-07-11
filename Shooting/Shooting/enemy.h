@@ -48,9 +48,12 @@ namespace jm {
 				}
 			}
 		}
-		virtual void update(const float& dt, vec2 direction) {}
 		virtual void draw() {}
-
+		void update(const float& dt, vec2 direction) {
+			float angle = GetDirectionAngle(center, direction);
+			center.x += cos(getRadian(angle)) * velocity.x * dt;
+			center.y += sin(getRadian(angle)) * velocity.y * dt;
+		}
 
 		int getScore() {
 			return score;
