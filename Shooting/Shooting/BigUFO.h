@@ -12,7 +12,7 @@ namespace jm {
 			beginTransformation();
 			{
 				translate(center.x, center.y);
-				drawFilledCircle(Colors::pink, radius); //우주선본체
+				drawFilledCircle(Colors::skyblue, radius); //우주선본체
 				drawFilledBox(Colors::purple, radius*2+0.05f, 0.03f); //우주선가운데 
 				translate(0, radius + 0.03f);
 				drawWiredBox(Colors::black, 0.3f, 0.03f); //체력바

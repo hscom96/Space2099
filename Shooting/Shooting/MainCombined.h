@@ -12,7 +12,7 @@
 #include "CollisionDetect.h"
 #include "Timer.h"
 #include "Stage.h"
-#include <Windows.h>
+#include "ScoreBoard.h"
 namespace jm
 {
 	class MainCombined : public Game2D
@@ -26,11 +26,14 @@ namespace jm
 		float timer_bullet; // 총알 타이머
 		CollisionDetect collisionDetect;
 		Stage stage;
-
 		Timer timer;
 
+		ScoreBoard scoreboard;
+		int temp_score; //점수 임시변수
+		
+
 	public:
-		MainCombined() :timer_bullet(0) {
+		MainCombined() :timer_bullet(0), temp_score(0){
 			timer.start();
 		}
 
@@ -72,8 +75,16 @@ namespace jm
 			enemymanager.update(getTimeStep(), spaceship.center); //적유닛 이동
 			enemymanager.draw(); //적유닛 rendering
 
-			collisionDetect.detectCollision_bullet_enemy(enemymanager, weaponmanager);
+			temp_score = collisionDetect.detectCollision_bullet_enemy(enemymanager, weaponmanager); // 적유닛-총알 충돌 탐지시 적,총알 객체 제거 및 점수반환 
+			scoreboard.addScore(temp_score);
 
+			weaponmanager.deleteBullet(); // 필요없는 총알 제거
+
+			if (temp_score != 0) {
+				std::cout << "실행" << std::endl;
+				scoreboard.draw();
+				temp_score = 0;
+			}
 			// 마우스 조준점 rendering	
 			beginTransformation();
 			{

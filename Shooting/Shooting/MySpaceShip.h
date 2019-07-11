@@ -5,11 +5,13 @@
 namespace jm {
 	class MySpaceShip
 	{
+	private :
+		float radius;
 	public:
+		MySpaceShip() :radius(0.06f) {}
 		vec2 center = vec2(0.0f, 0.0f);
 		vec2 direction = vec2(1.0f, 0.0f); 
 		void draw();
-		void update();
 		void update(char key, const float& dt) {
 			switch (key) {
 			case GLFW_KEY_A:

@@ -14,7 +14,7 @@ namespace jm {
 		double currentTime;
 		
 	public:
-		Stage() :delay_smallUFO(3000), delay_bigUFO(9000), delay_boss(30000) {
+		Stage() :delay_smallUFO(2000), delay_bigUFO(6000), delay_boss(20000) {
 			lastTime_smallUFO = 0;
 			lastTime_bigUFO = 0;
 			lastTime_boss = 0;

@@ -3,7 +3,7 @@
 #include "math.h"
 
 #define PI    3.141592654f
-#define framesize_X 2.66f
+#define framesize_X 3.0f
 #define framesize_Y 2.0f
 
 namespace jm {

@@ -3,7 +3,8 @@
 #include "Weapon.h"
 #include "Game2D.h"
 #include "Setting.h"
-
+#include <stdlib.h>
+#include <iostream>
 namespace jm {
 	class ScoreBoard
 	{
@@ -14,8 +15,8 @@ namespace jm {
 	public:
 		ScoreBoard() :score(0), player_hp(5), elaspe_time(0) {}
 
-		void setScore(int score) {
-			this->score = score;
+		void addScore(int score) {
+			this->score += score;
 		}
 		int getScore() {
 			return score;
@@ -26,6 +27,12 @@ namespace jm {
 		}
 		int getPlayer_hp() {
 			return player_hp;
+		}
+
+		void draw() {
+			system("cls");
+			std::cout << "스코어 : "<< score << std::endl;
+			std::cout << "체력 : "<< player_hp << std::endl;
 		}
 
 	};

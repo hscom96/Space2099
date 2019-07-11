@@ -11,7 +11,7 @@ namespace jm {
 		vec2 velocity;
 
 	public:
-		Weapon(float radius) :radius(radius), damage(50) {}
+		Weapon(float radius) :radius(radius), damage(80) {}
 
 		virtual void draw() {};
 		virtual void update(const float& dt) {};
