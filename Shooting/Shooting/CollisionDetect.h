@@ -3,7 +3,7 @@
 #include "Weapon.h"
 #include "EnemyManager.h"
 #include "WeaponManager.h"
-
+#include <iostream>
 namespace jm {
 	class CollisionDetect {
 	private:
@@ -27,6 +27,7 @@ namespace jm {
 			for (it_enemy = enemyContainer.getContainer().begin(); it_enemy != enemyContainer.getContainer().end();) {
 				Enemy* temp_enemy = *it_enemy;   // 임시변수
 				isErase = false;
+				if (weaponContainer.getContainer().size() == 0) break;
 				for (it_weapon = weaponContainer.getContainer().begin(); it_weapon != weaponContainer.getContainer().end();it_weapon++) {
 					Weapon* temp_weapon = *it_weapon;   // 임시변수
 					if (isCollision_bullet_enemy(*(it_weapon), *(it_enemy))) {//충돌 발생

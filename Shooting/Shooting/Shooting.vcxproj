@@ -79,6 +79,10 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
+      <HeapReserveSize>10000000</HeapReserveSize>
+      <HeapCommitSize>40000</HeapCommitSize>
+      <StackReserveSize>10000000</StackReserveSize>
+      <StackCommitSize>40000</StackCommitSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -147,6 +151,7 @@
     <ClInclude Include="SmallUFO.h" />
     <ClInclude Include="MainCombined.h" />
     <ClInclude Include="ScoreBoard.h" />
+    <ClInclude Include="Stage.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Vector3.h" />
