@@ -30,6 +30,7 @@ namespace jm
 
 		ScoreBoard scoreboard;
 		int temp_score; //점수 임시변수
+		int temp_damage; //데미지 임시변수
 		
 
 	public:
@@ -71,19 +72,24 @@ namespace jm
 
 			srand(static_cast<size_t>(time(NULL)));
 
-			stage.createEnemy(enemymanager,timer);
+			stage.createEnemy(enemymanager,timer); //스테이지 별 적유닛생성
 			enemymanager.update(getTimeStep(), spaceship.center); //적유닛 이동
 			enemymanager.draw(); //적유닛 rendering
 
 			temp_score = collisionDetect.detectCollision_bullet_enemy(enemymanager, weaponmanager); // 적유닛-총알 충돌 탐지시 적,총알 객체 제거 및 점수반환 
 			scoreboard.addScore(temp_score);
 
+			temp_damage = collisionDetect.detectCollision_unit_enemy(enemymanager, spaceship); //적유닛-사용자유닛 충돌 탐지시 사용자유닛 체력 감소
+			if (temp_damage != 0) {
+				scoreboard.minusPlayerHp(temp_damage); 
+			}
+
 			weaponmanager.deleteBullet(); // 필요없는 총알 제거
 
-			if (temp_score != 0) {
-				std::cout << "실행" << std::endl;
+			if (temp_score != 0 || temp_damage != 0) {
 				scoreboard.draw();
 				temp_score = 0;
+				temp_damage = 0;
 			}
 			// 마우스 조준점 rendering	
 			beginTransformation();

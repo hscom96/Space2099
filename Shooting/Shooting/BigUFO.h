@@ -6,7 +6,7 @@ namespace jm {
 	class BigUFO : public Enemy
 	{
 	public:
-		BigUFO() : Enemy(300, 1, vec2(0.04f, 0.04f), 80, 0.1f) {}
+		BigUFO() : Enemy(300, 2, vec2(0.04f, 0.04f), 80, 0.1f) {}
 
 		virtual void draw() {
 			beginTransformation();

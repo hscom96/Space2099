@@ -28,5 +28,11 @@ namespace jm {
 				break;
 			}
 		}
+		float getRadius() {
+			return radius;
+		}
+		vec2 getCenter() {
+			return center;
+		}
 	};
 }

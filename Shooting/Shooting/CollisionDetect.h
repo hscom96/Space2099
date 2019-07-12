@@ -4,14 +4,23 @@
 #include "EnemyManager.h"
 #include "WeaponManager.h"
 #include <iostream>
+#include "Timer.h"
+#define noDamageTime 1000
+
 namespace jm {
 	class CollisionDetect {
 	private:
+		Timer timer;
+		double currentTime;
+		double lastTime;
+		bool collisionFlag;
+
 	public:
+		CollisionDetect() :collisionFlag(true) {}
 		//총알-적유닛 충돌체크
 		template<class T1, class T2>
 		bool isCollision_Circle(T1 circle1, T2 circle2) {
-			if (GetDirectionLength(circle1->getCenter(), circle2->getCenter()) < circle1->getRadius() + circle2->getRadius()) {
+			if (GetDirectionLength(circle1.getCenter(), circle2.getCenter()) < circle1.getRadius() + circle2.getRadius()) {
 				return true;
 			}
 			else {
@@ -33,7 +42,7 @@ namespace jm {
 				if (weaponContainer.getContainer().size() == 0) break; // 컨테이너사이즈가 0이면 더 돌필요없이 종료
 				for (it_weapon = weaponContainer.getContainer().begin(); it_weapon != weaponContainer.getContainer().end();it_weapon++) {
 					Weapon* temp_weapon = *it_weapon;   // 임시변수
-					if (isCollision_Circle<Weapon*, Enemy*>(*(it_weapon), *(it_enemy))) {//충돌 발생
+					if (isCollision_Circle<Weapon, Enemy>(*(temp_weapon), *(temp_enemy))) {//충돌 발생
 						temp_enemy->minusHp(temp_weapon->getDamage());//공격처리(유닛체력감소)
 						if (temp_enemy->getHp() <= 0) { //유닛의 Hp가 0 이하이면
 							score = temp_enemy->getScore(); // 적유닛 점수 반환
@@ -56,6 +65,24 @@ namespace jm {
 			return score;
 		}
 
-		//
+		//사용자유닛-적유닛 충돌감지 (충돌후 일시적 무적상태)
+		//반환값 : 사용자 데미지
+		int detectCollision_unit_enemy(EnemyManager& enemyContainer, MySpaceShip& mySpaceShip) {
+			currentTime = timer.stopAndGetElapsedMilli();
+			
+			std::vector<Enemy*>::iterator it;
+			for (it = enemyContainer.getContainer().begin(); it != enemyContainer.getContainer().end();it++) {
+				if (isCollision_Circle<Enemy, MySpaceShip>((**it), mySpaceShip)) {
+					if (currentTime > noDamageTime || collisionFlag) {
+						collisionFlag = 0;
+						timer.start();
+						return (*it)->getDamage();
+						
+					}
+				}
+			}
+		
+			return 0;
+		}
 	};
 }

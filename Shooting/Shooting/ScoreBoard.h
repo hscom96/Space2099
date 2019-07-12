@@ -10,10 +10,10 @@ namespace jm {
 	{
 	private:
 		int score;
-		int player_hp;
-		float elaspe_time;
+		int playerHp;
+		float elaspeTime;
 	public:
-		ScoreBoard() :score(0), player_hp(5), elaspe_time(0) {}
+		ScoreBoard() :score(0), playerHp(5), elaspeTime(0) {}
 
 		void addScore(int score) {
 			this->score += score;
@@ -22,17 +22,17 @@ namespace jm {
 			return score;
 		}
 
-		void setPlayer_hp(int player_hp) {
-			this->player_hp = player_hp;
+		void minusPlayerHp(int player_hp) {
+			this->playerHp -= player_hp;
 		}
-		int getPlayer_hp() {
-			return player_hp;
+		int getPlayerhp() {
+			return playerHp;
 		}
 
 		void draw() {
 			system("cls");
 			std::cout << "스코어 : "<< score << std::endl;
-			std::cout << "체력 : "<< player_hp << std::endl;
+			std::cout << "체력 : "<< playerHp << std::endl;
 		}
 
 	};
